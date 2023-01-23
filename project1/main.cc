@@ -9,7 +9,7 @@
 #include <cstring>
 
 const int BLOCK_SIZE = 16 * 1024; // 16KB block size
-const int NUM_THREADS = 1; // number of worker threads
+const int NUM_THREADS = 2; // number of worker threads
 
 std::ifstream inputFile;
 std::ofstream outputFile;
