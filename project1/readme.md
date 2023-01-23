@@ -46,12 +46,16 @@ Time consumption with 1 threads: 28667 milliseconds
 
 ## Result
 
-We collect the time consumption under different number of threads as following shown. The fastest case is using 5 threads giving out a result of 12371 miliseconds performance. The CPU we used is `Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz`, which contains `40` cores.
+The size of `input.data` is 7.7 GB, and `output.data` after compression is 6.4 GB.
+
+We collect the time consumption under different number of threads as following shown. The fastest case is using 5 threads giving out a result of `12371` miliseconds performance. The CPU we used is `Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz`, which contains `40` cores.
 
 ![Fig.1 time_consumption](./time_consumption.svg)
 Fig.1 time consumption under different number of thread
 
 ## Conclusion
 From Fig.1, the trend of time consumption with the increasing of number of threads is declining first then growing to a level-off value.
- 
 
+This is a trade-off between compression speed and loading speed from disk. The compression speed is impacted by number of threads that used in the experiment while the compression speed for the specific disk is fixed. Once the blocks are queued for loading and writing, the total speed would be impacted.
+
+Overall, if we want to increase the speed or reduce the time consumption, proper number of worker threads should be taken into consideration, or changing disk with better performance. 
