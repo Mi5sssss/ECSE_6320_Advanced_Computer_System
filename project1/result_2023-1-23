@@ -1,0 +1,57 @@
+Time consumption with 1 threads: 28667 milliseconds
+Time consumption with 2 threads: 19179 milliseconds
+Time consumption with 3 threads: 15379 milliseconds
+Time consumption with 4 threads: 12715 milliseconds
+Time consumption with 5 threads: 12371 milliseconds
+Time consumption with 6 threads: 18940 milliseconds
+Time consumption with 7 threads: 22358 milliseconds
+Time consumption with 8 threads: 35034 milliseconds
+Time consumption with 10 threads: 37868 milliseconds
+Time consumption with 12 threads: 38456 milliseconds
+Time consumption with 16 threads: 38810 milliseconds
+Time consumption with 32 threads: 39233 milliseconds
+Time consumption with 36 threads: 38310 milliseconds
+Time consumption with 40 threads: 38356 milliseconds
+
+---
+
+Architecture:                    x86_64
+CPU op-mode(s):                  32-bit, 64-bit
+Byte Order:                      Little Endian
+Address sizes:                   46 bits physical, 48 bits virtual
+CPU(s):                          40
+On-line CPU(s) list:             0-39
+Thread(s) per core:              2
+Core(s) per socket:              10
+Socket(s):                       2
+NUMA node(s):                    2
+Vendor ID:                       GenuineIntel
+CPU family:                      6
+Model:                           79
+Model name:                      Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz
+Stepping:                        1
+CPU MHz:                         1201.227
+CPU max MHz:                     3100.0000
+CPU min MHz:                     1200.0000
+BogoMIPS:                        4399.75
+Virtualization:                  VT-x
+L1d cache:                       640 KiB
+L1i cache:                       640 KiB
+L2 cache:                        5 MiB
+L3 cache:                        50 MiB
+NUMA node0 CPU(s):               0-9,20-29
+NUMA node1 CPU(s):               10-19,30-39
+Vulnerability Itlb multihit:     KVM: Mitigation: Split huge pages
+Vulnerability L1tf:              Mitigation; PTE Inversion; VMX conditional cache flushes, SMT vulnerable
+Vulnerability Mds:               Mitigation; Clear CPU buffers; SMT vulnerable
+Vulnerability Meltdown:          Mitigation; PTI
+Vulnerability Mmio stale data:   Mitigation; Clear CPU buffers; SMT vulnerable
+Vulnerability Spec store bypass: Mitigation; Speculative Store Bypass disabled via prctl and seccomp
+Vulnerability Spectre v1:        Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:        Mitigation; Retpolines, IBPB conditional, IBRS_FW, STIBP conditional, RSB filling
+Vulnerability Srbds:             Not affected
+Vulnerability Tsx async abort:   Mitigation; Clear CPU buffers; SMT vulnerable
+Flags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xt
+                                 opology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c 
+                                 rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 hle avx2 smep bm
+                                 i2 erms invpcid rtm cqm rdt_a rdseed adx smap intel_pt xsaveopt cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts md_clear flush_l1d
