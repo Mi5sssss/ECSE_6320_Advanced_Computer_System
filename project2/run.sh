@@ -6,8 +6,6 @@ do
     do
         filenameA="matrixA_${dimension}_${isFloat}.txt"
         filenameB="matrixB_${dimension}_${isFloat}.txt"
-        filenameC="matrixCIntrin_${dimension}_${isFloat}.txt"
-        filenameD="matrixCCommon_${dimension}_${isFloat}.txt"
         
 
         # Generate the matrices with the current dimension and isFloat
@@ -15,6 +13,6 @@ do
 
         # Multiply the matrices and measure the time
         echo "Start the Experiment of Dimension: ${dimension}, isFloat: ${isFloat}"
-        ./main ${filenameA} ${filenameB} ${filenameC} ${filenameD}
+        ./main ${filenameA} ${filenameB}
     done
 done

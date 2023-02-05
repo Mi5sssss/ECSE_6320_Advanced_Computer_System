@@ -131,7 +131,7 @@ Matrix mulMatrixCommon(Matrix a, Matrix b) {
 }
 
 int main(int argc, char* argv[]) {
-    if (argc != 5) {
+    if (argc != 3) {
         std::cout << "Usage: " << argv[0] << " <matrixA file> <matrixB file> <intrin output file> <common output file>" << std::endl;
         return 1;
     }
@@ -143,7 +143,6 @@ int main(int argc, char* argv[]) {
     Matrix c = mulMatrixIntrin(a, b);
     auto end = std::chrono::high_resolution_clock::now();
 
-    writeMatrix(c, argv[3]);
     auto duration = std::chrono::duration_cast < std::chrono::milliseconds > (end - start).count();
     std::cout << "Intrin Duration: " << duration << " milliseconds" << std::endl;
 
@@ -151,7 +150,6 @@ int main(int argc, char* argv[]) {
     Matrix c2 = mulMatrixCommon(a, b);
     auto end2 = std::chrono::high_resolution_clock::now();
 
-    writeMatrix(c2, argv[4]);
     auto duration2 = std::chrono::duration_cast < std::chrono::milliseconds > (end2 - start2).count();
     std::cout << "Common Duration: " << duration2 << " milliseconds" << std::endl;
 
