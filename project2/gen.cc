@@ -34,25 +34,41 @@ void generateMatrix(int rows, int cols, bool isFloat, const std::string &filenam
   }
 }
 
-int main() {
-  int rows, cols;
-  bool isFloat;
-  int fractionalBits;
-  std::string filename;
+// int main() {
+//   int rows, cols;
+//   bool isFloat;
+//   int fractionalBits;
+//   std::string filename;
 
-  std::cout << "Enter the number of rows: ";
-  std::cin >> rows;
-  std::cout << "Enter the number of columns: ";
-  std::cin >> cols;
-  std::cout << "Is the matrix floating point (1/0)? ";
-  std::cin >> isFloat;
-  // std::cout << "Enter the number of fractional bits (for fixed point only): ";
-  // std::cin >> fractionalBits;
-//   std::cout << "Enter the filename: ";
-//   std::cin >> filename;
+//   std::cout << "Enter the number of rows: ";
+//   std::cin >> rows;
+//   std::cout << "Enter the number of columns: ";
+//   std::cin >> cols;
+//   std::cout << "Is the matrix floating point (1/0)? ";
+//   std::cin >> isFloat;
+//   // std::cout << "Enter the number of fractional bits (for fixed point only): ";
+//   // std::cin >> fractionalBits;
+// //   std::cout << "Enter the filename: ";
+// //   std::cin >> filename;
 
-//   generateMatrix(rows, cols, isFloat, fractionalBits, filename);
-  generateMatrix(rows, cols, isFloat, "matrixA.txt");
-  generateMatrix(rows, cols, isFloat, "matrixB.txt");
+// //   generateMatrix(rows, cols, isFloat, fractionalBits, filename);
+//   generateMatrix(rows, cols, isFloat, "matrixA.txt");
+//   generateMatrix(rows, cols, isFloat, "matrixB.txt");
+//   return 0;
+// }
+
+int main(int argc, char* argv[]) {
+  if (argc != 3) {
+    std::cout << "Usage: " << argv[0] << " <dimension> <isFloat (1/0)>" << std::endl;
+    return 1;
+  }
+
+  int dimension = std::stoi(argv[1]);
+  bool isFloat = std::stoi(argv[2]) != 0;
+  std::string filenameA = "matrixA_" + std::to_string(dimension) + "_" + (isFloat ? "1" : "0") + ".txt";
+  std::string filenameB = "matrixB_" + std::to_string(dimension) + "_" + (isFloat ? "1" : "0") + ".txt";
+
+  generateMatrix(dimension, dimension, isFloat, filenameA);
+  generateMatrix(dimension, dimension, isFloat, filenameB);
   return 0;
 }

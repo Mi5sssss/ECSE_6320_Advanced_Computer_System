@@ -69,7 +69,8 @@ Matrix mulMatrixIntrin(const Matrix &a, const Matrix &b) {
             for (int k = 0; k < a.cols; k += 8) {
                 __m256 aData = _mm256_loadu_ps(a.dataFloat + i * a.cols + k);
                 __m256 bData = _mm256_loadu_ps(b.dataFloat + k * b.cols + j);
-                sum = _mm256_fmadd_ps(aData, bData, sum);
+                // sum = _mm256_fmadd_ps(aData, bData, sum);
+                sum = _mm256_add_ps(sum, _mm256_mul_ps(aData, bData));
             }
             c.dataFloat[i * c.cols + j] = sum[0] + sum[1] + sum[2] + sum[3] + sum[4] + sum[5] + sum[6] + sum[7];
         }
@@ -82,7 +83,7 @@ Matrix mulMatrixIntrin(const Matrix &a, const Matrix &b) {
             for (int k = 0; k < a.cols; k += 8) {
                 __m256i aData = _mm256_loadu_si256((__m256i*) (a.dataFixed + i * a.cols + k));
                 __m256i bData = _mm256_loadu_si256((__m256i*) (b.dataFixed + k * b.cols + j));
-                sum = _mm256_add_epi32(sum, _mm256_mullo_epi32(aData, bData));
+                sum = _mm256_add_epi16(sum, _mm256_mullo_epi16(aData, bData));
             }
             int32_t result[8];
             _mm256_storeu_si256((__m256i*) result, sum);
@@ -116,29 +117,33 @@ Matrix mulMatrixCommon(Matrix a, Matrix b) {
         c.dataFixed = new int16_t[c.rows * c.cols];
         for (int i = 0; i < c.rows; i++) {
             for (int j = 0; j < c.cols; j++) {
-                int32_t sum = 0;
+                int sum = 0;
                 for (int k = 0; k < a.cols; k++) {
-                    sum += (int32_t) a.dataFixed[i * a.cols + k] * b.dataFixed[k * b.cols + j];
+                    sum += (int)(a.dataFixed[i * a.cols + k] * b.dataFixed[k * b.cols + j]) >> 8;
                 }
-                c.dataFixed[i * c.cols + j] = (int16_t) (sum >> 16);
+                c.dataFixed[i * c.cols + j] = sum;
             }
         }
+
     }
 
     return c;
 }
 
+int main(int argc, char* argv[]) {
+    if (argc != 5) {
+        std::cout << "Usage: " << argv[0] << " <matrixA file> <matrixB file> <intrin output file> <common output file>" << std::endl;
+        return 1;
+    }
 
-
-int main() {
-    Matrix a = readMatrix("matrixA.txt");
-    Matrix b = readMatrix("matrixB.txt");
+    Matrix a = readMatrix(argv[1]);
+    Matrix b = readMatrix(argv[2]);
 
     auto start = std::chrono::high_resolution_clock::now();
     Matrix c = mulMatrixIntrin(a, b);
     auto end = std::chrono::high_resolution_clock::now();
 
-    writeMatrix(c, "matrixCIntrin.txt");
+    writeMatrix(c, argv[3]);
     auto duration = std::chrono::duration_cast < std::chrono::milliseconds > (end - start).count();
     std::cout << "Intrin Duration: " << duration << " milliseconds" << std::endl;
 
@@ -146,7 +151,9 @@ int main() {
     Matrix c2 = mulMatrixCommon(a, b);
     auto end2 = std::chrono::high_resolution_clock::now();
 
-    writeMatrix(c, "matrixCCommon.txt");
+    writeMatrix(c2, argv[4]);
     auto duration2 = std::chrono::duration_cast < std::chrono::milliseconds > (end2 - start2).count();
     std::cout << "Common Duration: " << duration2 << " milliseconds" << std::endl;
+
+    return 0;
 }
