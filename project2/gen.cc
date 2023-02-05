@@ -1,67 +1,58 @@
-#include <iostream>
 #include <fstream>
-#include <cstdlib>
-#include <ctime>
+#include <iostream>
+#include <random>
+#include <string>
 
-struct Matrix {
-  int rows, cols;
-  float *data;
-};
-
-// Generates a random matrix with specified dimensions and precision
-Matrix generateMatrix(int rows, int cols, bool isFloat) {
-  Matrix m;
-  m.rows = rows;
-  m.cols = cols;
-  m.data = new float[rows * cols];
-  srand(time(NULL));
-  for (int i = 0; i < rows * cols; i++) {
-    if (isFloat) {
-      m.data[i] = static_cast<float>(rand()) / RAND_MAX;
-    } else {
-      m.data[i] = rand() % 65536 / 65536.0f;
-    }
-  }
-  return m;
+// Generate a random float between -1.0 and 1.0
+float randomFloat() {
+  static std::mt19937 rng(std::random_device{}());
+  static std::uniform_real_distribution<float> dist(-1.0, 1.0);
+  return dist(rng);
 }
 
-// Writes a matrix to a txt file
-void writeMatrix(const Matrix &m, const char *filename) {
-  std::ofstream file(filename);
-  file << m.rows << " " << m.cols << std::endl;
-  for (int i = 0; i < m.rows * m.cols; i++) {
-    file << m.data[i] << " ";
-    if ((i + 1) % m.cols == 0) {
-      file << std::endl;
-    }
-  }
+// Generate a random 2-byte fixed point value between -32767 and 32767
+int16_t randomFixedPoint() {
+  static std::mt19937 rng(std::random_device{}());
+  static std::uniform_int_distribution<int16_t> dist(-32767, 32767);
+  return dist(rng);
 }
 
-// Read matrix from txt file
-Matrix readMatrix(const char *filename) {
-  std::ifstream file(filename);
-  Matrix m;
-  file >> m.rows >> m.cols;
-  m.data = new float[m.rows * m.cols];
-  for (int i = 0; i < m.rows * m.cols; i++) {
-    file >> m.data[i];
+void generateMatrix(int rows, int cols, bool isFloat, const std::string &filename) {
+  std::ofstream ofs(filename);
+  // ofs << rows << " " << cols << " " << (isFloat ? "4" : "2") << " " << fractionalBits << std::endl;
+  ofs << rows << " " << cols << " " << isFloat << std::endl;
+  // ofs << rows << " " << cols << " " << fractionalBits << std::endl;
+  for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < cols; j++) {
+      if (isFloat) {
+        ofs << randomFloat() << " ";
+      } else {
+        ofs << randomFixedPoint() << " ";
+      }
+    }
+    ofs << std::endl;
   }
-  return m;
 }
 
 int main() {
   int rows, cols;
   bool isFloat;
-  std::cout << "Enter number of rows: ";
+  int fractionalBits;
+  std::string filename;
+
+  std::cout << "Enter the number of rows: ";
   std::cin >> rows;
-  std::cout << "Enter number of columns: ";
+  std::cout << "Enter the number of columns: ";
   std::cin >> cols;
-  std::cout << "Enter precision (0 for float, 1 for fixed-point): ";
+  std::cout << "Is the matrix floating point (1/0)? ";
   std::cin >> isFloat;
-  Matrix a = generateMatrix(rows, cols, isFloat == 0);
-  Matrix b = generateMatrix(rows, cols, isFloat == 0);
-  writeMatrix(a, "matrixA.txt");
-  writeMatrix(b, "matrixB.txt");
-//   Matrix c = readMatrix("matrixC.txt");
+  // std::cout << "Enter the number of fractional bits (for fixed point only): ";
+  // std::cin >> fractionalBits;
+//   std::cout << "Enter the filename: ";
+//   std::cin >> filename;
+
+//   generateMatrix(rows, cols, isFloat, fractionalBits, filename);
+  generateMatrix(rows, cols, isFloat, "matrixA.txt");
+  generateMatrix(rows, cols, isFloat, "matrixB.txt");
   return 0;
 }
