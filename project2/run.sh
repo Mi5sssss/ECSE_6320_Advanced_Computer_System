@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for dimension in 1 2 128 256 512 1024 2048 4096 8192 16384
+for dimension in 128 256 512 1024 2048 4096 8192 16384
 do
     for isFloat in 0 1
     do
@@ -14,5 +14,8 @@ do
         # Multiply the matrices and measure the time
         echo "Start the Experiment of Dimension: ${dimension}, isFloat: ${isFloat}"
         ./main ${filenameA} ${filenameB}
+
+        rm ${filenameA}
+        rm ${filenameB}
     done
 done
