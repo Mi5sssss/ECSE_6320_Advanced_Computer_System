@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for dimension in 128 256 512 1024 2048 4096 8192 16384
+for dimension in 128 256 512 1024 2048 4096 1000 10000
 do
     for isFloat in 0 1
     do

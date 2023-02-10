@@ -28,6 +28,12 @@ Common Duration: 744 milliseconds
 Start the Experiment of Dimension: 512, isFloat: 1
 Intrin Duration: 201 milliseconds
 Common Duration: 699 milliseconds
+Start the Experiment of Dimension: 1000, isFloat: 0
+Intrin Duration: 1220 milliseconds
+Common Duration: 4012 milliseconds
+Start the Experiment of Dimension: 1000, isFloat: 1
+Intrin Duration: 1290 milliseconds
+Common Duration: 3763 milliseconds
 Start the Experiment of Dimension: 1024, isFloat: 0
 Intrin Duration: 1854 milliseconds
 Common Duration: 6218 milliseconds
@@ -46,9 +52,9 @@ Common Duration: 618785 milliseconds
 Start the Experiment of Dimension: 4096, isFloat: 1
 Intrin Duration: 118628 milliseconds
 Common Duration: 637877 milliseconds
-Start the Experiment of Dimension: 8192, isFloat: 0
-Intrin Duration: 961699 milliseconds
-Common Duration: 10618111 milliseconds
-Start the Experiment of Dimension: 8192, isFloat: 1
-Intrin Duration: 1053853 milliseconds
-Common Duration: 10001194 milliseconds
+Start the Experiment of Dimension: 10000, isFloat: 0
+Intrin Duration: 1882215 milliseconds
+Common Duration: 9279676 milliseconds
+Start the Experiment of Dimension: 10000, isFloat: 1
+Intrin Duration: 2024713 milliseconds
+Common Duration: 9054452 milliseconds
