@@ -50,7 +50,7 @@ Common Duration: 54236 milliseconds
 
 ## Experiment
 
-The experiment was conducted on matrices with dimensions `128 256 512 1024 2048 4096 8192` in both floating-point and fixed-point formats. The script `run.sh` can be used to run the experiment easily:
+The experiment was conducted on matrices with dimensions `128 256 512 1024 2048 4096 1000 10000` in both floating-point and fixed-point formats. The script `run.sh` can be used to run the experiment easily:
 
 ```
 sh run.sh
