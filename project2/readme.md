@@ -38,7 +38,7 @@ g++ -march=native -o main main.cc
 
 To execute the program, use the following command:
 ```
-./main matrixA.txt filenmatrixBameB
+./main matrixA.txt matrixB.txt
 ```
 
 The program's runtime duration will be displayed in the terminal. For instance:
