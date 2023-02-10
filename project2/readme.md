@@ -68,7 +68,7 @@ The results of the experiment will be displayed in the terminal.
 | 128           | 3                                  | 3                                  | 9                                  | 9                                   |
 | 256           | 30                                 | 28                                 | 95                                 | 99                                  |
 | 512           | 246                                | 201                                | 744                                | 699                                 |
-| 1024           | 1854                                | 1863                                | 6218                                | 5643                                 |
+| 1000           | 1220                                | 1290                                | 4012                                | 3763                                 |
 | 1024          | 1854                               | 1863                               | 6218                               | 5643                                |
 | 2048          | 15002                              | 14925                              | 54236                              | 49576                               |
 | 4096          | 119140                             | 118628                             | 618785                             | 637877                              |
@@ -82,7 +82,7 @@ The results of the experiment show the performance of the matrix multiplication 
 
 It can be observed that the performance improvement using SIMD instructions is significant, especially for larger matrix dimensions. The `Intrin Duration` is significantly lower than the `Common Duration` for matrix dimensions. For example, for a matrix dimension of 4096, the `Intrin Duration` is `119140` milliseconds while the `Common Duration` is `618785` milliseconds.
 
-In terms of the impact of using floating-point numbers vs fixed-point numbers, it can be seen that the duration is similar for both types of numbers. For example, for a matrix dimension of `8192`, the Intrin Duration for floating-point numbers is `1053853`
+In terms of the impact of using floating-point numbers vs fixed-point numbers, it can be seen that the duration is similar for both types of numbers. For example, for a matrix dimension of `10000`, the Intrin Duration for floating-point numbers is `2024713`
  milliseconds while for fixed-point numbers it is `961699`
  milliseconds.
 
