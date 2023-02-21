@@ -1,0 +1,504 @@
+randwrite: (g=0): rw=randwrite, bs=(R) 128KiB-128KiB, (W) 128KiB-128KiB, (T) 128KiB-128KiB, ioengine=libaio, iodepth=16
+fio-3.16
+Starting 1 process
+
+randwrite: (groupid=0, jobs=1): err= 0: pid=4011001: Mon Feb 20 23:58:04 2023
+  write: IOPS=5513, BW=689MiB/s (723MB/s)(14.0GiB/20802msec); 0 zone resets
+    slat (usec): min=52, max=1027, avg=79.07, stdev=15.59
+    clat (usec): min=7, max=810162, avg=2667.92, stdev=33933.10
+     lat (usec): min=148, max=810232, avg=2747.13, stdev=33932.73
+    clat percentiles (usec):
+     |  1.00th=[  1029],  5.00th=[  1037], 10.00th=[  1037], 20.00th=[  1045],
+     | 30.00th=[  1057], 40.00th=[  1090], 50.00th=[  1156], 60.00th=[  1352],
+     | 70.00th=[  1369], 80.00th=[  1369], 90.00th=[  1369], 95.00th=[  1385],
+     | 99.00th=[  1418], 99.50th=[  2040], 99.90th=[801113], 99.95th=[801113],
+     | 99.99th=[809501]
+   bw (  KiB/s): min=38656, max=1798400, per=100.00%, avg=946727.23, stdev=484234.13, samples=31
+   iops        : min=  302, max=14050, avg=7396.23, stdev=3783.10, samples=31
+  lat (usec)   : 10=0.01%
+  lat (msec)   : 2=99.47%, 4=0.34%, 750=0.01%, 1000=0.17%
+  cpu          : usr=2.00%, sys=70.08%, ctx=964, majf=0, minf=16
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,114689,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+
+Run status group 0 (all jobs):
+  WRITE: bw=689MiB/s (723MB/s), 689MiB/s-689MiB/s (723MB/s-723MB/s), io=14.0GiB (15.0GB), run=20802-20802msec
+
+Disk stats (read/write):
+  nvme0n1: ios=0/130527, merge=0/5, ticks=0/2930681, in_queue=2674984, util=45.32%
+randwrite: (g=0): rw=randwrite, bs=(R) 32.0KiB-32.0KiB, (W) 32.0KiB-32.0KiB, (T) 32.0KiB-32.0KiB, ioengine=libaio, iodepth=16
+fio-3.16
+Starting 1 process
+
+randwrite: (groupid=0, jobs=1): err= 0: pid=4010758: Mon Feb 20 23:57:42 2023
+  write: IOPS=22.2k, BW=693MiB/s (727MB/s)(13.5GiB/20001msec); 0 zone resets
+    slat (usec): min=12, max=1492, avg=20.14, stdev= 6.47
+    clat (usec): min=2, max=853035, avg=673.48, stdev=16732.82
+     lat (usec): min=24, max=853052, avg=693.74, stdev=16732.77
+    clat percentiles (usec):
+     |  1.00th=[   277],  5.00th=[   281], 10.00th=[   281], 20.00th=[   281],
+     | 30.00th=[   285], 40.00th=[   285], 50.00th=[   293], 60.00th=[   359],
+     | 70.00th=[   371], 80.00th=[   371], 90.00th=[   375], 95.00th=[   379],
+     | 99.00th=[   388], 99.50th=[   396], 99.90th=[  1074], 99.95th=[  1352],
+     | 99.99th=[817890]
+   bw (  KiB/s): min=49053, max=1658624, per=100.00%, avg=826118.70, stdev=509377.57, samples=33
+   iops        : min= 1532, max=51832, avg=25816.18, stdev=15918.09, samples=33
+  lat (usec)   : 4=0.01%, 50=0.01%, 100=0.01%, 250=0.03%, 500=99.77%
+  lat (usec)   : 750=0.08%, 1000=0.01%
+  lat (msec)   : 2=0.06%, 750=0.01%, 1000=0.04%
+  cpu          : usr=4.58%, sys=70.72%, ctx=16812, majf=0, minf=19
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,443497,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+
+Run status group 0 (all jobs):
+  WRITE: bw=693MiB/s (727MB/s), 693MiB/s-693MiB/s (727MB/s-727MB/s), io=13.5GiB (14.5GB), run=20001-20001msec
+
+Disk stats (read/write):
+  nvme0n1: ios=0/142599, merge=0/6, ticks=0/2535039, in_queue=2303428, util=42.38%
+randwrite: (g=0): rw=randwrite, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=16
+fio-3.16
+Starting 1 process
+
+randwrite: (groupid=0, jobs=1): err= 0: pid=4010520: Mon Feb 20 23:57:22 2023
+  write: IOPS=133k, BW=518MiB/s (543MB/s)(10.1GiB/20001msec); 0 zone resets
+    slat (usec): min=2, max=785, avg= 3.41, stdev= 1.59
+    clat (usec): min=2, max=828543, avg=113.44, stdev=6025.17
+     lat (usec): min=5, max=828546, avg=116.92, stdev=6025.16
+    clat percentiles (usec):
+     |  1.00th=[   61],  5.00th=[   62], 10.00th=[   62], 20.00th=[   62],
+     | 30.00th=[   63], 40.00th=[   64], 50.00th=[   64], 60.00th=[   66],
+     | 70.00th=[   68], 80.00th=[   71], 90.00th=[   85], 95.00th=[   88],
+     | 99.00th=[   96], 99.50th=[  104], 99.90th=[  141], 99.95th=[  147],
+     | 99.99th=[  553]
+   bw (  KiB/s): min=29840, max=951168, per=100.00%, avg=599177.80, stdev=340157.17, samples=35
+   iops        : min= 7460, max=237792, avg=149794.26, stdev=85039.37, samples=35
+  lat (usec)   : 4=0.01%, 10=0.01%, 20=0.01%, 50=0.01%, 100=99.35%
+  lat (usec)   : 250=0.64%, 500=0.01%, 750=0.01%, 1000=0.01%
+  lat (msec)   : 1000=0.01%
+  cpu          : usr=16.12%, sys=64.15%, ctx=1741, majf=0, minf=17
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,2651649,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+
+Run status group 0 (all jobs):
+  WRITE: bw=518MiB/s (543MB/s), 518MiB/s-518MiB/s (543MB/s-543MB/s), io=10.1GiB (10.9GB), run=20001-20001msec
+
+Disk stats (read/write):
+  nvme0n1: ios=0/91234, merge=0/3, ticks=0/1688372, in_queue=1516060, util=32.05%
+randwrite: (g=0): rw=randwrite, bs=(R) 128KiB-128KiB, (W) 128KiB-128KiB, (T) 128KiB-128KiB, ioengine=libaio, iodepth=16
+fio-3.16
+Starting 1 process
+
+randwrite: (groupid=0, jobs=1): err= 0: pid=4012602: Tue Feb 21 00:00:10 2023
+  write: IOPS=5610, BW=701MiB/s (735MB/s)(14.0GiB/20442msec); 0 zone resets
+    slat (usec): min=53, max=1088, avg=79.20, stdev=15.56
+    clat (usec): min=7, max=816679, avg=2674.29, stdev=34101.89
+     lat (usec): min=136, max=816744, avg=2753.63, stdev=34101.45
+    clat percentiles (usec):
+     |  1.00th=[  1020],  5.00th=[  1029], 10.00th=[  1029], 20.00th=[  1037],
+     | 30.00th=[  1057], 40.00th=[  1090], 50.00th=[  1172], 60.00th=[  1352],
+     | 70.00th=[  1352], 80.00th=[  1369], 90.00th=[  1369], 95.00th=[  1369],
+     | 99.00th=[  2040], 99.50th=[  2114], 99.90th=[801113], 99.95th=[809501],
+     | 99.99th=[817890]
+   bw (  KiB/s): min=29184, max=1723136, per=100.00%, avg=917293.97, stdev=498227.08, samples=32
+   iops        : min=  228, max=13462, avg=7166.34, stdev=3892.38, samples=32
+  lat (usec)   : 10=0.01%, 1000=0.01%
+  lat (msec)   : 2=98.93%, 4=0.87%, 1000=0.18%
+  cpu          : usr=1.88%, sys=70.66%, ctx=935, majf=0, minf=553
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,114689,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+
+Run status group 0 (all jobs):
+  WRITE: bw=701MiB/s (735MB/s), 701MiB/s-701MiB/s (735MB/s-735MB/s), io=14.0GiB (15.0GB), run=20442-20442msec
+
+Disk stats (read/write):
+  nvme0n1: ios=0/122047, merge=0/8, ticks=0/2824884, in_queue=2582552, util=44.72%
+randwrite: (g=0): rw=randwrite, bs=(R) 32.0KiB-32.0KiB, (W) 32.0KiB-32.0KiB, (T) 32.0KiB-32.0KiB, ioengine=libaio, iodepth=16
+fio-3.16
+Starting 1 process
+
+randwrite: (groupid=0, jobs=1): err= 0: pid=4012356: Mon Feb 20 23:59:49 2023
+  write: IOPS=22.1k, BW=690MiB/s (724MB/s)(14.0GiB/20766msec); 0 zone resets
+    slat (usec): min=11, max=901, avg=19.86, stdev= 5.67
+    clat (usec): min=7, max=837653, avg=679.76, stdev=16958.87
+     lat (usec): min=64, max=837672, avg=699.71, stdev=16958.84
+    clat percentiles (usec):
+     |  1.00th=[   277],  5.00th=[   277], 10.00th=[   281], 20.00th=[   281],
+     | 30.00th=[   281], 40.00th=[   285], 50.00th=[   289], 60.00th=[   314],
+     | 70.00th=[   367], 80.00th=[   371], 90.00th=[   371], 95.00th=[   375],
+     | 99.00th=[   388], 99.50th=[   416], 99.90th=[   660], 99.95th=[  1254],
+     | 99.99th=[809501]
+   bw (  KiB/s): min=23168, max=1582656, per=100.00%, avg=838709.11, stdev=542491.57, samples=35
+   iops        : min=  724, max=49458, avg=26209.63, stdev=16952.86, samples=35
+  lat (usec)   : 10=0.01%, 500=99.61%, 750=0.30%, 1000=0.01%
+  lat (msec)   : 2=0.05%, 750=0.01%, 1000=0.04%
+  cpu          : usr=4.28%, sys=69.83%, ctx=9165, majf=0, minf=168
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,458753,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+
+Run status group 0 (all jobs):
+  WRITE: bw=690MiB/s (724MB/s), 690MiB/s-690MiB/s (724MB/s-724MB/s), io=14.0GiB (15.0GB), run=20766-20766msec
+
+Disk stats (read/write):
+  nvme0n1: ios=0/127637, merge=0/9, ticks=0/2855831, in_queue=2604036, util=44.38%
+randwrite: (g=0): rw=randwrite, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=16
+fio-3.16
+Starting 1 process
+
+randwrite: (groupid=0, jobs=1): err= 0: pid=4012054: Mon Feb 20 23:59:27 2023
+  write: IOPS=128k, BW=500MiB/s (524MB/s)(10.0GiB/20492msec); 0 zone resets
+    slat (usec): min=2, max=822, avg= 3.36, stdev= 1.63
+    clat (usec): min=6, max=851135, avg=113.84, stdev=6193.75
+     lat (usec): min=49, max=851138, avg=117.28, stdev=6193.74
+    clat percentiles (usec):
+     |  1.00th=[   60],  5.00th=[   60], 10.00th=[   61], 20.00th=[   61],
+     | 30.00th=[   61], 40.00th=[   62], 50.00th=[   63], 60.00th=[   64],
+     | 70.00th=[   66], 80.00th=[   81], 90.00th=[   84], 95.00th=[   86],
+     | 99.00th=[   91], 99.50th=[   95], 99.90th=[  114], 99.95th=[  129],
+     | 99.99th=[  766]
+   bw (  KiB/s): min=29696, max=973168, per=100.00%, avg=635374.00, stdev=314697.48, samples=33
+   iops        : min= 7424, max=243292, avg=158843.52, stdev=78674.29, samples=33
+  lat (usec)   : 10=0.01%, 100=99.75%, 250=0.23%, 500=0.01%, 750=0.01%
+  lat (usec)   : 1000=0.01%
+  lat (msec)   : 1000=0.01%
+  cpu          : usr=16.44%, sys=63.53%, ctx=20728, majf=0, minf=16
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,2621441,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+
+Run status group 0 (all jobs):
+  WRITE: bw=500MiB/s (524MB/s), 500MiB/s-500MiB/s (524MB/s-524MB/s), io=10.0GiB (10.7GB), run=20492-20492msec
+
+Disk stats (read/write):
+  nvme0n1: ios=0/104497, merge=0/17, ticks=0/2006566, in_queue=1802120, util=34.92%
+randwrite: (g=0): rw=randwrite, bs=(R) 128KiB-128KiB, (W) 128KiB-128KiB, (T) 128KiB-128KiB, ioengine=libaio, iodepth=16
+fio-3.16
+Starting 1 process
+
+randwrite: (groupid=0, jobs=1): err= 0: pid=4011814: Mon Feb 20 23:59:06 2023
+  write: IOPS=5697, BW=712MiB/s (747MB/s)(13.9GiB/20001msec); 0 zone resets
+    slat (usec): min=56, max=1309, avg=79.80, stdev=15.29
+    clat (usec): min=2, max=815213, avg=2569.46, stdev=32528.72
+     lat (usec): min=72, max=815279, avg=2649.41, stdev=32528.29
+    clat percentiles (usec):
+     |  1.00th=[  1020],  5.00th=[  1020], 10.00th=[  1029], 20.00th=[  1037],
+     | 30.00th=[  1057], 40.00th=[  1106], 50.00th=[  1336], 60.00th=[  1352],
+     | 70.00th=[  1352], 80.00th=[  1352], 90.00th=[  1369], 95.00th=[  1369],
+     | 99.00th=[  1418], 99.50th=[  1926], 99.90th=[784335], 99.95th=[801113],
+     | 99.99th=[817890]
+   bw (  KiB/s): min=33280, max=1827328, per=100.00%, avg=811571.18, stdev=531440.08, samples=34
+   iops        : min=  260, max=14276, avg=6340.38, stdev=4151.89, samples=34
+  lat (usec)   : 4=0.01%, 100=0.01%, 250=0.01%, 500=0.01%, 750=0.01%
+  lat (usec)   : 1000=0.01%
+  lat (msec)   : 2=99.61%, 4=0.21%, 1000=0.17%
+  cpu          : usr=2.39%, sys=70.30%, ctx=943, majf=0, minf=19
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,113959,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+
+Run status group 0 (all jobs):
+  WRITE: bw=712MiB/s (747MB/s), 712MiB/s-712MiB/s (747MB/s-747MB/s), io=13.9GiB (14.9GB), run=20001-20001msec
+
+Disk stats (read/write):
+  nvme0n1: ios=0/122414, merge=0/6, ticks=0/2740312, in_queue=2497408, util=44.54%
+randwrite: (g=0): rw=randwrite, bs=(R) 32.0KiB-32.0KiB, (W) 32.0KiB-32.0KiB, (T) 32.0KiB-32.0KiB, ioengine=libaio, iodepth=16
+fio-3.16
+Starting 1 process
+
+randwrite: (groupid=0, jobs=1): err= 0: pid=4011557: Mon Feb 20 23:58:45 2023
+  write: IOPS=22.3k, BW=698MiB/s (731MB/s)(13.6GiB/20001msec); 0 zone resets
+    slat (usec): min=12, max=1282, avg=20.56, stdev= 6.35
+    clat (nsec): min=1919, max=821051k, avg=665662.03, stdev=16234111.05
+     lat (usec): min=24, max=821068, avg=686.34, stdev=16234.06
+    clat percentiles (usec):
+     |  1.00th=[   277],  5.00th=[   281], 10.00th=[   281], 20.00th=[   281],
+     | 30.00th=[   285], 40.00th=[   289], 50.00th=[   326], 60.00th=[   371],
+     | 70.00th=[   371], 80.00th=[   375], 90.00th=[   375], 95.00th=[   379],
+     | 99.00th=[   388], 99.50th=[   400], 99.90th=[  1012], 99.95th=[  1237],
+     | 99.99th=[817890]
+   bw (  KiB/s): min=12544, max=1628224, per=100.00%, avg=909065.20, stdev=434567.69, samples=30
+   iops        : min=  392, max=50882, avg=28408.13, stdev=13580.13, samples=30
+  lat (usec)   : 2=0.01%, 50=0.01%, 100=0.01%, 250=0.01%, 500=99.87%
+  lat (usec)   : 750=0.02%, 1000=0.01%
+  lat (msec)   : 2=0.06%, 500=0.01%, 750=0.01%, 1000=0.04%
+  cpu          : usr=5.08%, sys=70.76%, ctx=7730, majf=0, minf=18
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,446468,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+
+Run status group 0 (all jobs):
+  WRITE: bw=698MiB/s (731MB/s), 698MiB/s-698MiB/s (731MB/s-731MB/s), io=13.6GiB (14.6GB), run=20001-20001msec
+
+Disk stats (read/write):
+  nvme0n1: ios=0/166608, merge=0/11, ticks=0/2582222, in_queue=2338252, util=43.08%
+randwrite: (g=0): rw=randwrite, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=16
+fio-3.16
+Starting 1 process
+
+randwrite: (groupid=0, jobs=1): err= 0: pid=4011282: Mon Feb 20 23:58:25 2023
+  write: IOPS=134k, BW=525MiB/s (550MB/s)(10.2GiB/20001msec); 0 zone resets
+    slat (usec): min=2, max=738, avg= 3.36, stdev= 1.69
+    clat (usec): min=2, max=895285, avg=112.36, stdev=6087.28
+     lat (usec): min=5, max=895291, avg=115.80, stdev=6087.28
+    clat percentiles (usec):
+     |  1.00th=[   60],  5.00th=[   61], 10.00th=[   61], 20.00th=[   61],
+     | 30.00th=[   62], 40.00th=[   63], 50.00th=[   63], 60.00th=[   65],
+     | 70.00th=[   66], 80.00th=[   69], 90.00th=[   84], 95.00th=[   87],
+     | 99.00th=[   92], 99.50th=[   99], 99.90th=[  139], 99.95th=[  147],
+     | 99.99th=[  758]
+   bw (  KiB/s): min=34560, max=963472, per=100.00%, avg=566794.38, stdev=375632.05, samples=37
+   iops        : min= 8640, max=240868, avg=141698.59, stdev=93908.38, samples=37
+  lat (usec)   : 4=0.01%, 10=0.01%, 20=0.01%, 50=0.01%, 100=99.55%
+  lat (usec)   : 250=0.44%, 750=0.01%, 1000=0.01%
+  lat (msec)   : 750=0.01%, 1000=0.01%
+  cpu          : usr=17.28%, sys=63.16%, ctx=4659, majf=0, minf=20
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=100.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.1%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,2686205,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=16
+
+Run status group 0 (all jobs):
+  WRITE: bw=525MiB/s (550MB/s), 525MiB/s-525MiB/s (550MB/s-550MB/s), io=10.2GiB (11.0GB), run=20001-20001msec
+
+Disk stats (read/write):
+  nvme0n1: ios=0/92081, merge=0/3, ticks=0/1834393, in_queue=1654532, util=32.35%
+Intel(R) Memory Latency Checker - v3.10
+Command line parameters: --loaded_latency -W6 -l256 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	186.56	  71446.3
+ 00002	186.24	  71444.4
+ 00008	185.86	  71457.5
+ 00015	185.67	  71458.5
+ 00050	 93.59	  47167.2
+ 00100	 80.67	  27816.1
+ 00200	 74.34	  14893.3
+ 00300	 72.07	  10353.9
+ 00400	 69.89	   8043.5
+ 00500	 68.88	   6656.3
+ 00700	 67.89	   5046.5
+ 01000	 67.03	   3842.0
+ 01300	 66.64	   3186.3
+ 01700	 66.59	   2667.5
+ 02500	 66.28	   2127.4
+ 03500	 66.00	   1801.4
+ 05000	 68.85	   1511.8
+ 09000	 65.73	   1297.8
+ 20000	 65.37	   1125.2
+Intel(R) Memory Latency Checker - v3.10
+Command line parameters: --loaded_latency -W7 -l256 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	239.93	  46944.3
+ 00002	240.32	  46575.7
+ 00008	238.89	  45858.1
+ 00015	241.27	  45496.2
+ 00050	224.04	  43747.3
+ 00100	218.56	  43690.7
+ 00200	203.34	  43587.8
+ 00300	167.48	  43291.7
+ 00400	126.93	  39007.7
+ 00500	115.85	  32821.5
+ 00700	 98.81	  24505.7
+ 01000	 87.33	  17707.9
+ 01300	 82.79	  13943.1
+ 01700	 82.37	  10908.9
+ 02500	 74.45	   7788.1
+ 03500	 72.05	   5854.2
+ 05000	 69.70	   4401.5
+ 09000	 67.78	   2883.2
+ 20000	 66.41	   1837.4
+Intel(R) Memory Latency Checker - v3.10
+Command line parameters: --loaded_latency -W8 -l256 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	251.48	  49604.5
+ 00002	263.88	  49581.0
+ 00008	250.27	  48838.3
+ 00015	248.46	  48065.1
+ 00050	221.90	  49370.4
+ 00100	201.70	  49095.7
+ 00200	Intel(R) Memory Latency Checker - v3.10
+Command line parameters: --loaded_latency -W9 -l256 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	235.36	  44203.3
+ 00002	237.50	  44985.8
+ 00008	234.87	  43408.1
+ 00015	233.89	  42596.4
+ 00050	217.58	  40226.1
+ 00100	206.75	  40058.7
+ 00200	166.11	  39589.6
+ 00300	123.70	  33804.8
+ 00400	112.39	  27006.6
+ 00500	107.57	  22328.4
+ 00700	 95.11	  16599.3
+ 01000	 82.30	  12118.9
+ 01300	 78.57	   9610.6
+ 01700	 75.58	   7610.7
+ 02500	 72.15	   5512.1
+ 03500	 70.47	   4222.3
+ 05000	 72.52	   3206.6
+ 09000	 67.62	   2240.8
+ 20000	 66.14	   1550.2
+Intel(R) Memory Latency Checker - v3.10
+Command line parameters: --loaded_latency -W6 -l64 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	185.85	  71195.0
+ 00002	186.27	  71187.9
+ 00008	185.62	  71187.1
+ 00015	189.60	  71161.2
+ 00050	 96.17	  47122.5
+ 00100	 88.30	  27771.0
+ 00200	 82.89	  14809.7
+ 00300	 80.96	  10260.3
+ 00400	 79.87	   7935.8
+ 00500	 79.55	   6533.5
+ 00700	 78.31	   4918.3
+ 01000	 77.70	   3709.0
+ 01300	 77.25	   3052.7
+ 01700	 77.03	   2535.9
+ 02500	 77.19	   1991.2
+ 03500	 77.10	   1661.6
+ 05000	 76.50	   1418.5
+ 09000	 76.30	   1163.6
+ 20000	 76.25	    985.5
+Intel(R) Memory Latency Checker - v3.10
+Command line parameters: --loaded_latency -W7 -l64 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	241.98	  97352.3
+ 00002	245.82	  97394.8
+ 00008	242.19	  98019.6
+ 00015	242.53	  98523.0
+ 00050	240.91	 102122.1
+ 00100	231.62	 101937.3
+ 00200	113.88	  81454.1
+ 00300	 99.82	  56065.8
+ 00400	 93.78	  42872.1
+ 00500	 90.88	  34724.3
+ 00700	 87.98	  25246.9
+ 01000	 85.90	  18018.9
+ 01300	 87.01	  14065.9
+ 01700	 81.36	  11007.0
+ 02500	 80.15	   7763.7
+ 03500	 81.80	   5762.8
+ 05000	 77.84	   4311.8
+ 09000	 77.11	   2770.5
+ 20000	 76.90	   1706.2
+Intel(R) Memory Latency Checker - v3.10
+Command line parameters: --loaded_latency -W8 -l64 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	250.89	  93757.6
+ 00002	250.99	  93779.9
+ 00008	250.61	  94034.9
+ 00015	250.82	  95161.5
+ 00050	223.84	  99467.7
+ 00100	142.43	  94617.3
+ 00200	 97.25	  55624.4
+ 00300	 91.56	  38112.6
+ 00400	 88.96	  29099.7
+ 00500	 86.50	  23579.3
+ 00700	 83.45	  17187.6
+ 01000	 81.18	  12335.9
+ 01300	 80.14	   9702.1
+ 01700	 79.17	   7628.0
+ 02500	 78.22	   5465.2
+ 03500	 77.65	   4146.8
+ 05000	 77.07	   3158.1
+ 09000	 76.69	   2128.8
+ 20000	 76.41	   1420.3
+Intel(R) Memory Latency Checker - v3.10
+Command line parameters: --loaded_latency -W9 -l64 
+
+Using buffer size of 100.000MiB/thread for reads and an additional 100.000MiB/thread for writes
+
+Measuring Loaded Latencies for the system
+Using all the threads from each core if Hyper-threading is enabled
+Inject	Latency	Bandwidth
+Delay	(ns)	MB/sec
+==========================
+ 00000	232.49	 100268.4
+ 00002	233.67	 100126.8
+ 00008	232.35	 101104.1
+ 00015	231.50	 102212.9
+ 00050	187.76	 101647.5
+ 00100	132.70	  94286.4
+ 00200	100.07	  55266.3
+ 00300	 92.14	  37948.2
+ 00400	 88.73	  29010.8
+ 00500	 87.25	  23516.5
+ 00700	 83.97	  17157.4
+ 01000	 81.88	  12314.9
+ 01300	 80.84	   9686.3
+ 01700	 85.71	   7558.7
+ 02500	 78.55	   5459.7
+ 03500	 77.96	   4142.9
+ 05000	 78.18	   3144.7
+ 09000	 76.93	   2125.9
+ 20000	 76.62	   1418.0
