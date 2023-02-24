@@ -3,13 +3,29 @@
 The purpose of this report is to present the findings and conclusions of a project focused on developing a deeper understanding of the performance of modern memory and storage devices. The project involved conducting comprehensive experiments to measure the read/write latency/throughput of memory and storage devices under various data access workloads.
 
 ## How to use
-`run.sh` provides the experiments we tested. Run following command:
+`run.sh` provides the experiments we tested and will automatically partition, mount and umount the disk. Modify the settings:
+`SSD_DEVICE="/dev/nvme0n1"`, 
+`TEST_PARTITION="/dev/nvme0n1p2"` to user's own SSD device and test partition, this should be seen when running `lsblk` in the command:
+```
+nvme1n1     259:0    0   1.8T  0 disk 
+├─nvme1n1p1 259:3    0   1.4T  0 part /mnt/intelssdp1
+└─nvme1n1p2 259:5    0   439G  0 part 
+nvme0n1     259:1    0   1.8T  0 disk 
+├─nvme0n1p1 259:2    0   1.4T  0 part 
+├─nvme0n1p2 259:4    0   423G  0 part /mnt/intelssd1p2
+└─nvme0n1p3 259:6    0    16G  0 part [SWAP]
+```
+
+
+ Run following command:
 
 ```
 sh run.sh
 ```
 
 ## SSD Test Results
+
+CPU: `Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz`
 
 The SSD for test is `INTEL SSDPEDKE020T7 DC P4600`, with capacity of `2 TB`. 
 
