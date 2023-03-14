@@ -1,0 +1,27 @@
+Running experiment with 1 threads and search prefix pair: pmacocj pma
+Encoding time: 124.918 seconds
+Search time: 1.93217 seconds
+Search SIMD time: 1.36706 seconds
+Prefix search time: 4.70761 seconds
+-e 
+
+Running experiment with 2 threads and search prefix pair: pmacocj pma
+Encoding time: 252.329 seconds
+Search time: 2.39163 seconds
+Search SIMD time: 1.35307 seconds
+Prefix search time: 4.77929 seconds
+-e 
+
+Running experiment with 4 threads and search prefix pair: pmacocj pma
+Encoding time: 239.359 seconds
+Search time: 2.26282 seconds
+Search SIMD time: 1.35704 seconds
+Prefix search time: 4.69017 seconds
+-e 
+
+Running experiment with 8 threads and search prefix pair: pmacocj pma
+Encoding time: 242.672 seconds
+Search time: 2.02202 seconds
+Search SIMD time: 1.34968 seconds
+Prefix search time: 4.78296 seconds
+-e 
