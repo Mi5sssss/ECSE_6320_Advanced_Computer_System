@@ -63,13 +63,11 @@ This counterintuitive behavior could be attributed to the locking mechanism used
 
 ### 2 Search time
 
-The search time varies slightly between different thread counts, but the differences are not significant. This is expected, as the search operation does not depend on the number of threads used for encoding.
-
 The SIMD-based search consistently outperforms the regular search. SIMD search times range from 1.34968 to 1.36706 seconds, while regular search times range from 1.93217 to 2.39163 seconds. This indicates that SIMD instructions effectively speed up the search operation, as intended.
 
 ### 3 Prefix search time
 
-The prefix search time remains relatively stable across all thread counts, ranging from 4.69017 to 4.78296 seconds. As with search time, the prefix search operation is independent of the number of threads used for encoding.
+The prefix search time remains relatively stable, ranging from 4.69017 to 4.78296 seconds.
 
 ### 4 To make a summary
 
@@ -77,4 +75,4 @@ The single-threaded implementation has the fastest encoding time, while the perf
 
 The SIMD-based search consistently outperforms the regular search, demonstrating the effectiveness of SIMD instructions in speeding up search operations.
 
-The prefix search time remains relatively stable across different thread counts and is generally higher than the single data item search times, as expected.
+The prefix search time is generally higher than the single data item search times, as expected.
