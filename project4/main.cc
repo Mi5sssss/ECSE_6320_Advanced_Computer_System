@@ -105,12 +105,12 @@ std::vector<std::pair<std::string, int>> prefix_search(const std::vector<std::st
 
 // Main function
 int main(int argc, char *argv[]) {
-    if (argc != 3) {
-        std::cerr << "Usage: " << argv[0] << " <search_value> <prefix>" << std::endl;
+    if (argc != 4) {
+        std::cerr << "Usage: " << argv[0] << " <search_value> <prefix> <data_path>" << std::endl;
         return 1;
     }
     // Load data from file
-    std::ifstream infile("/home/xie/ECSE_6320_dataset/project4/Column.txt");
+    std::ifstream infile(argv[3]);
     std::vector<std::string> data;
     std::string line;
     while (std::getline(infile, line)) {
