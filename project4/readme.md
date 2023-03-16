@@ -16,6 +16,8 @@ The implementation support the following operations:
 The code is structured into the following components:
 
 ### Dictionary encoder
+Hash table is used in the code, which employed the `std::unordered_map`.
+
 * `encode_thread`: This function serves as the core operation executed by each thread during the encoding process. Accepting a reference to the input data, the start and end indices for the specific data chunk to process, and a reference to the dictionary, it iterates through the data chunk. Consequently, the dictionary is updated with unique data items and their corresponding dictionary IDs.
 
 * `encode`: The primary encoding function accepts a reference to the input data and returns a vector of integers representing the encoded data. Internally, the function divides the data into portions, spawns threads for parallel processing of these chunks, and synchronizes the completion of all threads before generating the encoded data column.
